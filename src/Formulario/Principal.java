@@ -18,7 +18,10 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
-    Celda celda[][];
+     public static Celda celda[][];
+     public static int filas;
+     public static int columnas;
+     public static boolean gano;
 
     public Principal() {
         initComponents();
@@ -184,8 +187,9 @@ public class Principal extends javax.swing.JFrame {
     }
 
     public void cargar() {
-        int filas = (int) fFilas.getValue();
-        int columnas = (int) fColumnas.getValue();
+        gano=false;
+        filas = (int) fFilas.getValue();
+        columnas = (int) fColumnas.getValue();
         int minas = (int) fMinas.getValue();
         this.celda = new Celda[filas][columnas];
         int minasx[] = numerosSinRepeticion(minas, filas);
